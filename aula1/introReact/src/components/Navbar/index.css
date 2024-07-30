@@ -1,0 +1,5 @@
+.navbar-container{
+    background-color: var(--cor-1);
+    color: var(--cor-6);
+    height: 60px;
+}

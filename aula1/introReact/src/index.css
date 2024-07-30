@@ -1,0 +1,16 @@
+html,body,#root{
+    height: 100%;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor-1: #07beb8;
+    --cor-2: #3dccc7;
+    --cor-3: #68d8d6;
+    --cor-4: #9ceaef;
+    --cor-5: #c4fff9;
+    --cor-6: #ffffff;
+
+}
