@@ -1,10 +1,9 @@
-import React from 'react'
 import './index.css'
 
 function Navbar() {
   return (
     <div className='navbar-container'>
-        <h1>Taylor Script</h1>      
+        <h1>Kanye West >>> Taylor Swift</h1>      
     </div>
   )
 }
