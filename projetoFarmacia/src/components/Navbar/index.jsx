@@ -1,20 +1,26 @@
 import React from 'react'
 import './Index.css'
+import Button from '../Button/index'
+import Logo from '../Logo/index'
+
 
 function Navbar() {
   return (
     <div className='navbar-container'>
+
         <div className="divLogo">
-        <img src='./images/logop.png' className='logop-css'></img>
+        <Logo/>
         </div>
 
         <div className="divButton">
-        <button className="button">Quero ir!</button>
+        <Button/>
         </div>
-        
       
    </div>
-  )
+
+           
+   
+   )
 }
 
 export default Navbar
