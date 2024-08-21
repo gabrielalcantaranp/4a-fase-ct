@@ -66,11 +66,99 @@
 
 }
 
+.body-contexto-dois{
+    display: flex;
+    background-color:darkorange;
+    width: 100%;
+    height: 25%;
+
+}
+
+.body-contexto-tres{
+    display: flex;
+    background-color:rgb(225, 0, 255);
+    width: 100%;
+    height: 25%;
+    flex-direction: column;
+
+}
+
+.linha-um{
+    display: flex;
+    background-color: darkgreen;
+    width: 100%;
+    height: 25%;
+}
+
+.check-box-um{
+    display: flex;
+    background-color: black;
+    width: 15%;
+    height: 100%;
+
+}
+
+
+
+.linha-dois{
+    display: flex;
+    background-color: rgb(179, 255, 0);
+    width: 100%;
+    height: 25%;
+}
+
+.check-box-dois{
+    display: flex;
+    background-color: black;
+    width: 15%;
+    height: 100%;
+
+}
+
+.linha-tres{
+    display: flex;
+    background-color: rgb(255, 0, 106);
+    width: 100%;
+    height: 25%;
+}
+
+.check-box-tres{
+    display: flex;
+    background-color: black;
+    width: 15%;
+    height: 100%;
+
+}
+
+
+
+.linha-quatro{
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    width: 100%;
+    height: 25%;
+}
+
+.check-box-quatro{
+    display: flex;
+    background-color: black;
+    width: 15%;
+    height: 100%;
+    
+}
+
 .info-contexto{
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
     margin-left: 18px;
+}
+.info-contexto-dois{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-left: 18px;
+    font-size: 25px;
 }
 
 
