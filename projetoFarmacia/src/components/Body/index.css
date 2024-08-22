@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
 
 .body-container {
-    background-color: var(--cor-5);
+    background-color: var(--cor-1);
     width: 100%;
-    height: 75%;
+    height: 85%;
     margin: 0px;
     display: flex;
 
@@ -11,90 +14,75 @@
 
 .body-info{
     width: 50%;
-    height: 100%;
     display: flex;
-    background-color: aqua;
+    background-color: var(--cor-1);
     flex-direction: column;
+    margin-top: 100px;
 
 }
 
 .body-image{
     width: 50%;
-    height: 100%;
-    background-color: rgb(0, 60, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-1);
+    margin-top: 100px;
 
 }
 
 .body-top{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 15%;
+    background-color: var(--cor-1);
+    width: 100%;
+    height: 25%;
+    margin-top: 30px;
+
 
 }
 
-.body-estrelas{
-    width: 20%;
-    height: 100%;
-    background-color: var(--cor-2);
-    display: flex;
-    align-items: center;
-    align-items: end;
-
-}
-
-
-
-.body-info-estrelas{
-    width: 80%;
-    height: 100%;
-    background-color: var(--cor-2);
-    display: flex;
-
-}
-
-.info-estrelas{
-    font-size: 22px;
-    margin-top: 57px;
-    font-family: "Poppins", sans-serif;
- 
-}
 
 .body-contexto{
     display: flex;
-    background-color: chocolate;
+    background-color: var(--cor-1);
+    width: 100%;
+    height: 40%;
+    margin-top: 30px;
 
 }
 
 .body-contexto-dois{
     display: flex;
-    background-color:darkorange;
+    background-color: var(--cor-1);
     width: 100%;
     height: 25%;
+    margin-top: 50px;
 
 }
 
 .body-contexto-tres{
     display: flex;
-    background-color:rgb(225, 0, 255);
+    background-color: var(--cor-1);
     width: 100%;
     height: 25%;
     flex-direction: column;
+    margin-top: 50px;
 
 }
 
 .linha-um{
     display: flex;
-    background-color: darkgreen;
+    background-color: var(--cor-1);
     width: 100%;
     height: 25%;
 }
 
 .check-box-um{
     display: flex;
-    background-color: black;
-    width: 15%;
+    background-color: var(--cor-1);
+    width: 10%;
     height: 100%;
+    justify-content: end;
 
 }
 
@@ -102,31 +90,34 @@
 
 .linha-dois{
     display: flex;
-    background-color: rgb(179, 255, 0);
+    background-color: var(--cor-1);
     width: 100%;
     height: 25%;
+    
 }
 
 .check-box-dois{
     display: flex;
-    background-color: black;
-    width: 15%;
+    background-color: var(--cor-1);
+    width: 10%;
     height: 100%;
+    justify-content: end;
 
 }
 
 .linha-tres{
     display: flex;
-    background-color: rgb(255, 0, 106);
+    background-color: var(--cor-1);
     width: 100%;
     height: 25%;
 }
 
 .check-box-tres{
     display: flex;
-    background-color: black;
-    width: 15%;
+    background-color: var(--cor-1);
+    width: 10%;
     height: 100%;
+    justify-content: end;
 
 }
 
@@ -134,32 +125,80 @@
 
 .linha-quatro{
     display: flex;
-    background-color: rgb(255, 0, 0);
+    background-color: var(--cor-1);
     width: 100%;
     height: 25%;
 }
 
 .check-box-quatro{
     display: flex;
-    background-color: black;
-    width: 15%;
+    background-color: var(--cor-1);
+    width: 10%;
     height: 100%;
+    justify-content: end;
     
 }
 
 .info-contexto{
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
-    margin-left: 18px;
+    margin-left: 150px;
+    color: var(--cor-2);;
+    /* margin-top: 100px; */
+    font-size: 40px;
+    text-shadow: 0px 3px 10px var(--cor-7);
+
+    
+
+
+
+    
 }
 .info-contexto-dois{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-left: 30px;
+    font-size: 20px;
+    color: var(--cor-2);;
+    margin-right: 80px;
+    text-shadow: 0px 3px 10px var(--cor-7);
+}
+
+.check-list{
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
     margin-left: 18px;
-    font-size: 25px;
+    font-size: 18px;
+    /* margin-top: 5px; */
+    color: var(--cor-2);;
+    text-shadow: 0px 3px 10px var(--cor-7);
+
 }
+
+.placa-css{
+
+    margin-left: 45px;
+    margin-bottom: 10px;
+    height: 200px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 3px 10px var(--cor-7);
+
+} 
+
+.camisetap-css{
+
+    margin-left: 45px;
+    margin-bottom: 10px;
+    height: 200px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 3px 10px var(--cor-7);
+
+} 
 
 
 

@@ -1,5 +1,6 @@
 html,body,#root{
     height: 100%;
+    width: 100%;
     margin: 0;
     box-sizing: border-box;
 }
@@ -11,4 +12,5 @@ html,body,#root{
     --cor-4: #ce1f3a;
     --cor-5: #e6e6e6;
     --cor-6: #ef97a4;
+    --cor-7: #800000
 }

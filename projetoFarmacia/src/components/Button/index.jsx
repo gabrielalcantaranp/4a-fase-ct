@@ -4,7 +4,7 @@ import './index.css'
 function index() {
     return (
         <div>
-            <button className='button'>Quero ir!</button>
+            <button className='button'>Fazer parte!</button>
         </div>
     )
 
