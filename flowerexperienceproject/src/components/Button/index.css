@@ -1,0 +1,28 @@
+.button {
+    background-color: transparent;
+    color: var(--cor-5);
+    font-size: 12px;
+    transition: 0.5s;
+    cursor: pointer;
+    margin: 15px;
+    border: none;
+}
+
+.button:hover {
+    color: var(--cor-4);
+    font-size: 12px;
+}
+
+.buttonInfos {
+    border: none;
+    background-color: transparent;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+.buttonInfos:hover {
+    color: var(--cor-6);
+    font-size: 12px;
+
+}

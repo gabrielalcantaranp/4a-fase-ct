@@ -1,0 +1,19 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --cor-1: #678371;
+  --cor-2: #ebe8d9;
+  --cor-3: #f4f2ea;
+  --cor-4: #ffffff;
+  --cor-5: #000000;
+  --cor-6: #800000;
+  --cor-6: #a0a0a0;
+}
+
