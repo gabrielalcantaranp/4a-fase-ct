@@ -8,13 +8,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: absolute;
 }
 
 .divLogo {
     display: flex;
     align-items: center; 
-    width: 250px;
+    width: 25%;
+    height: 100%;
 }
 
 .textNavigation {
@@ -30,6 +31,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 50%;
+    height: 100%;
 }
 
 .divInfos {
@@ -37,9 +40,10 @@
     display: flex;
     align-items: center;
     justify-content: end;
-    width: 250px;
+    width: 25%;
     height: 50px;
     margin-right: 20px;
+    height: 100%;
 
 }
 
