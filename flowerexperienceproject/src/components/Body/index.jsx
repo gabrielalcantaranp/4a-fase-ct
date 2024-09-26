@@ -1,5 +1,6 @@
 import React from 'react'
 import './Index.css'
+import Carrossel from '../Carrossel/index'
 import { BsCreditCard } from "react-icons/bs";
 import { LuCalendarDays } from "react-icons/lu";
 import { LiaShippingFastSolid } from "react-icons/lia";
@@ -11,7 +12,7 @@ function Body() {
             <div className='body-carrossel'>
 
                 <div className='carrossel-slot'>
-                     <img src="./images/banner.png" className='banner-css'/>  
+                    <Carrossel/>
                 </div>
 
             </div>
