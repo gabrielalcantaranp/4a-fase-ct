@@ -7,26 +7,31 @@ import Navinfo from '../Navinfo/index'
 
 
 function Navbar() {
-  return (
-    <div className='navbar-container'>
+    return (
+        <>
+            <div className='navbar-quarter'>
+                <p className='navbar-quarter-text'>ENTREGA PARA O MESMO DIA NOS PEDIDOS FEITOS ATÉ ÀS 12H</p>
+            </div>
 
-        <div className="divLogo">
-        <Logo/>
-        </div>
+            <div className='navbar-container'>
 
-        <div className='divNavgation'>
-            <Button />
-        </div>
+                <div className="divLogo">
+                    <Logo />
+                </div>
 
-        <div className='divInfos'>
-            <Navinfo />
-        </div>
-     
-   </div>
+                <div className='divNavgation'>
+                    <Button />
+                </div>
 
-           
-   
-   )
+                <div className='divInfos'>
+                    <Navinfo />
+                </div>
+
+            </div>
+        </>
+
+
+    )
 }
 
 export default Navbar

@@ -47,6 +47,19 @@
 
 }
 
+.navbar-quarter{
+    height: 3%;
+    width: 100%;
+    background-color: var(--cor-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.navbar-quarter-text{
+    color: white;
+}
 
 
 
