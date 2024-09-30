@@ -1,67 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-.navbar-container{
-    background-color: var(--cor-2);
-    height: 15%;
+.container{
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    position: absolute;
+    background-color: var(--cor-2);
+    padding: 3px;
 }
 
-.divLogo {
-    display: flex;
-    align-items: center; 
-    width: 25%;
-    height: 100%;
+.logo{
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
 }
 
-.textNavigation {
-   color: var(--cor-5);
-   margin: 18px;
-   font-size: 18px;
-   margin-top: 57px;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+ul{
+    flex: 1;
+    list-style: none;
+    text-align: center;
 }
 
-.divNavgation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
+ul li{
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.divInfos {
-
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 25%;
-    height: 50px;
-    margin-right: 20px;
-    height: 100%;
-
+.toggle-icon{
+    width: 30px;
+    cursor: pointer;
+    padding: 15px;
 }
 
-.navbar-quarter{
-    height: 3%;
-    width: 100%;
-    background-color: var(--cor-1);
+.search-box{
     display: flex;
     align-items: center;
-    justify-content: center;
+    background: var(--cor-1);
+    padding: 10px 20px;
+    border-radius: 50px;
 }
 
-
-.navbar-quarter-text{
-    color: white;
+.search-box input{
+    padding: 6px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 18px;
+    max-width: 200px;
 }
 
+.search-box input::placeholder{
+    color: var(--cor-2);
+}
 
-
-
-
+.search-box img{
+    width: 20px;
+    cursor: pointer;
+}
