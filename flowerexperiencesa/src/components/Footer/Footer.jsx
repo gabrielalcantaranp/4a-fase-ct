@@ -1,3 +1,4 @@
+import React from 'react'
 import './Footer.css'
 import insta_light from '../../assets/insta-light.png'
 import insta_dark from '../../assets/insta-dark.png'
@@ -7,7 +8,6 @@ import lkd_dark from '../../assets/lkd-dark.png'
 import lkd_light from '../../assets/lkd-light.png'
 
 
-import React from 'react'
 
 const Footer = ({ theme, setTheme }) => {
 
@@ -17,7 +17,11 @@ const Footer = ({ theme, setTheme }) => {
 
     return (
         <footer className='footer-css'>
+            <div className='footer-infos-div'>
 
+            </div>
+
+            <div className='footer-social-media-div'>
             <ul>
                 <li>
                     <img src={theme == 'dark' ? insta_light : insta_dark} alt='' className='social-media-icon' />
@@ -29,6 +33,8 @@ const Footer = ({ theme, setTheme }) => {
                     <img src={theme == 'dark' ? lkd_light : lkd_dark} alt='' className='social-media-icon' />
                 </li>
             </ul>
+            </div>
+
             <p>
                 <span>Flower Experience</span> &copy; 2024
             </p>

@@ -1,10 +1,22 @@
-import React from 'react'
-import './Infos.css'
+import React from 'react';
+import './Infos.css';
+import fretes_light from '../../assets/fretes-light.png';
+import fretes_dark from '../../assets/fretes-dark.png';
+import card_dark from '../../assets/card-dark.png';
+import card_light from '../../assets/card-light.png';
+import calendario_dark from '../../assets/calendario-dark.png';
+import calendario_light from '../../assets/calendario-light.png';
 
-function Infos() {
+const Infos = ({ theme, setTheme }) => {
+
+    const toggle_mode = () => {
+        theme == 'light' ? setTheme('dark') : setTheme('light')
+    }
+
     return (
+
         <div className='body-container'>
-          
+
             <div className='body-infos'>
 
                 <div className='frete-container'>
@@ -12,7 +24,7 @@ function Infos() {
                     <div className='frete-box'>
 
                         <div className='frete-icon'>
-                        <img src={theme == 'dark' ? insta_light : insta_dark} alt='' className='social-media-icon' />
+                        <img src={theme == 'dark' ? fretes_light : fretes_dark} className='frete-icon-css' />
 
                         </div>
 
@@ -39,8 +51,7 @@ function Infos() {
                     <div className='card-box'>
 
                         <div className='card-icon'>
-                        <img src={theme == 'dark' ? insta_light : insta_dark} alt='' className='social-media-icon' />
-
+                        <img src={theme == 'dark' ? card_light : card_dark} className='card-icon-css' />
                         </div>
 
                         <div className='card-infos'>
@@ -51,7 +62,7 @@ function Infos() {
                             </div>
 
                             <div className='frase-card'>    
-                                <p className='poppins-regular'>assinatua mensal, trimestral, semestral e anual.</p>
+                                <p className='poppins-regular'>assine exatamente do seu jeito.</p>
                             </div>
 
                         </div>
@@ -65,7 +76,7 @@ function Infos() {
                     <div className='calendario-box'>
 
                         <div className='calendario-icon'>
-                        <img src={theme == 'dark' ? insta_light : insta_dark} alt='' className='social-media-icon' />
+                        <img src={theme == 'dark' ? calendario_light : calendario_dark} className='calendario-icon-css' />
                         </div>
 
                         <div className='calendario-infos'>
@@ -87,8 +98,7 @@ function Infos() {
             </div>
 
         </div>
+    );
+};
 
-    )
-}
-
-export default Infos
+export default Infos;

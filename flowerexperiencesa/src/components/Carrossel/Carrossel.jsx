@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Carrossel.css';
-import banner1 from '../../assets/banner.png'; // Corrigido
-import banner2 from '../../assets/banner-dois.png'; // Corrigido
+import banner1 from '../../assets/banner-g.png'; // Corrigido
+import banner2 from '../../assets/banner-g2.png'; // Corrigido
 
 const images = [banner1, banner2];
 

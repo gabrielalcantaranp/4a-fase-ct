@@ -1,17 +1,20 @@
-import React from 'react'
-import Carrossel from '../components/Carrossel/Carrossel'
-import Infos from '../components/Infos/Infos'
-import SessaoPlantas from '../components/SessaoPlantas/SessaoPlantas'
-import './Home.css'
 
-function Home() {
+
+import React from 'react';
+import Carrossel from '../components/Carrossel/Carrossel';
+import Infos from '../components/Infos/Infos';
+import Footer from '../components/Footer/Footer';
+import './Home.css';
+
+const Home = ({ theme, setTheme }) => {
   return (
-    <section>
-      <Carrossel/>
-      {/* <Infos/>
-      <SessaoPlantas/> */}
-    </section>
-  )
-}
+    <div>
+      <Carrossel />
+      <Infos theme={theme} setTheme={setTheme} />
+      <Footer theme={theme} setTheme={setTheme} />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
+
