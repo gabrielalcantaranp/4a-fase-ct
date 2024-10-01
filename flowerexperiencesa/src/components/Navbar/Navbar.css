@@ -154,3 +154,8 @@ ul li a:hover{
 .dark .search-box input::placeholder{
     color: var(--cor-1)
 }
+
+.foto-plantas{
+    width: 275px;
+    height: 310px;
+}
