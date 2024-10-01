@@ -11,7 +11,7 @@
 }
 
 .logo{
-    width: 160px;
+    width: 140px;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -25,7 +25,7 @@ ul{
 ul li{
      display: inline-block;
     margin: 10px 20px;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer; 
 }
 
@@ -37,21 +37,21 @@ ul li a:hover{
 
 
 .toggle-icon{
-    width: 28px;
+    width: 22px;
     cursor: pointer;
     margin-left: 60px;
     transition: 0.5s;
 }
 
 .favorite-icon{
-    width: 28px;
+    width: 22px;
     cursor: pointer;
     margin-left: 10px;
     transition: 0.5s;
 }
 
 .user-icon{
-    width: 28px;
+    width: 22px;
     cursor: pointer;
     margin-left: 10px;
     transition: 0.5s;
@@ -64,6 +64,8 @@ ul li a:hover{
     background: var(--cor-1);
     padding: 10px 20px;
     border-radius: 50px;
+    height: 40px;
+    width: 240px;
     transition: 0.5s;
 }
 
@@ -90,7 +92,7 @@ ul li a:hover{
 
 .text_navbar{
     color: var(--cor-1);
-    font-size: 18px;
+    font-size: 15px;
     font-family: "Fredoka", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -103,7 +105,7 @@ ul li a:hover{
 }
 
 .text_navbar:hover {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--cor-1);
 
 }
@@ -111,7 +113,7 @@ ul li a:hover{
 
 .dark .text_navbar{
     color: var(--cor-2);
-    font-size: 18px;
+    font-size: 15px;
     font-family: "Fredoka", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -122,13 +124,13 @@ ul li a:hover{
 }
 
 .dark .text_navbar:hover {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--cor-4);
 
 }
 
 .dark ul li a:hover{
-    font-size: 22px;
+    font-size: 20px;
     color: var(--cor-4);
 
 

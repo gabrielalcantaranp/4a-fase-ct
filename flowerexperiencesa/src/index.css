@@ -18,21 +18,26 @@
     font-family: sans-serif;
 }
 
+html,body{
+width: 100%;
+height: 100%;
+}
+
 .container-main{
     width: 100%;
-    min-height: 120vh;
+    min-height: 100vh;
     background-color: var(--cor-2);
     transition: 0.5s;
 }
 
 .container-main.dark{
     width: 100%;
-    min-height: 120vh;
+    min-height: 100vh;
     background-color: var(--cor-1);
     transition: 0.5s;
 }
 
 
-/* .container.dark{
+ .container.dark{
     background: var(--cor-1);
-} */
+} 
