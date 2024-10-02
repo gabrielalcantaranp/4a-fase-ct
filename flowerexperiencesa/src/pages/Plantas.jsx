@@ -79,7 +79,7 @@ const Plantas = ({ theme, setTheme }) => {
                 </div>
 
                 <div className='card-title'>
-                  <h1 className='nome-planta'>PLANTA CANASVIEIRAS</h1>
+                  <h1 className='nome-planta'>PLANTA NAUFRAGADOS</h1>
                 </div>
 
               </div>

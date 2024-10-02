@@ -7,6 +7,7 @@ import Plantas from './pages/Plantas';
 import Desidratadas from './pages/Desidratadas';
 import Arranjos from './pages/Arranjos';
 import Orquideas from './pages/Orquideas';
+import Usuario from './pages/Usuario';
 
 const App = () => {
   const current_theme = localStorage.getItem('current_theme');
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/desidratadas" element={<Desidratadas />} />
           <Route path="/arranjos" element={<Arranjos />} />
           <Route path="/orquideas" element={<Orquideas />} />
+          <Route path="/usuario" element={<Usuario />} />
         </Routes>
       </Router>
     </div>

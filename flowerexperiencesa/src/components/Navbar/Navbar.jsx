@@ -37,7 +37,7 @@ const toggle_mode = ()=>{
         </div>
 
         <img onClick={() => {toggle_mode()}}src={theme == 'dark' ? toogle_light : toogle_dark} alt='' className='toggle-icon'/>
-        <img src={theme == 'dark' ? user_light : user_dark} alt='' className='user-icon'/>
+        <Link to='usuario'><img src={theme == 'dark' ? user_light : user_dark} alt='' className='user-icon'/></Link>
         <img src={theme == 'dark' ? favorite_light : favorite_dark} alt='' className='favorite-icon'/>
 
 

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.usuario {
+    background-color: var(--cor-2);
+    height: 87.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    background-image: url('../assets/background-dark.png');
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.dark .usuario {
+    background-color: var(--cor-1);
+    height: 87.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/background-light.png');
+}
+
+.principal {
+    background-color: var(--cor-2);
+    height: 80%;
+    width: 80%;
+    display: flex;
+    -webkit-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);  
+}
+
+.infos-usuario {
+    background-color: transparent;
+    width: 50%;
+    
+}
+
+.foto-usuario {
+    background-color: var(--cor-2);
+    height: 30%;
+    justify-content: center;
+    align-items: end;
+    display: flex;
+
+}
+
+.foto {
+    width: 130px;
+    height: 130px;
+    background-color: var(--cor-1);
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nome-usuario {
+    background-color: var(--cor-2);
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome-usuario p{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--cor-1);
+
+}
+
+
+
+.input-usuario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Espaço entre os grupos de inputs */
+    margin-left: 25%;
+}   
+
+.input-usuario p {
+    margin: 5px 0; /* Margem acima e abaixo dos parágrafos */
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--cor-1);
+}
+
+.input-css {
+    /* padding: 8px; Espaçamento interno dos inputs */
+    margin-top: 5px; /* Espaço entre o parágrafo e o input */
+    width: 65%;
+}
+
+
+
+.button-usuario {
+    background-color: var(--cor-2);
+    height: 20%;
+}
+
+.assinaturas-usuario {
+    background-color: var(--cor-2);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-assinaturas {
+    background-color: white;
+    height: 80%;
+    width: 92%;
+}
+
+.usuario-user-icon{
+    width: 150px;
+}
