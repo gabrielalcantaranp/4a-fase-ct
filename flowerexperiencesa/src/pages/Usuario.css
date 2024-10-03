@@ -79,7 +79,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px; /* Espaço entre os grupos de inputs */
-    margin-left: 25%;
+    margin-left: 15%;
 }   
 
 .input-usuario p {
@@ -87,12 +87,15 @@
     font-size: 15px;
     font-weight: bold;
     color: var(--cor-1);
+    display: flex;
+    align-items: center;
 }
 
 .input-css {
     /* padding: 8px; Espaçamento interno dos inputs */
     margin-top: 5px; /* Espaço entre o parágrafo e o input */
-    width: 65%;
+    width: 85%;
+    height: 40px;
 }
 
 
@@ -100,6 +103,9 @@
 .button-usuario {
     background-color: var(--cor-2);
     height: 20%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .assinaturas-usuario {
@@ -118,4 +124,82 @@
 
 .usuario-user-icon{
     width: 150px;
+}
+
+.button-edituser-css{
+    border: none;
+    width: 150px;
+    height: 40px;
+    margin: 30px;
+    background-color: white;
+    border-radius: 30px;
+    color: var(--cor-1);
+    font-size: 18px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    cursor: pointer;
+
+}
+
+.button-excluiruser-css{
+    border: none;
+    width: 150px;
+    height: 40px;
+    margin: 30px;
+    background-color: white;
+    border-radius: 30px;
+    color: rgb(121, 0, 0);
+    font-size: 18px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    cursor: pointer;
+
+}
+
+.button-edituser-css:hover{
+    border: none;
+    width: 170px;
+    height: 60px;
+    margin: 30px;
+    background-color: white;
+    border-radius: 30px;
+    color: var(--cor-1);
+    font-size: 20px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.button-excluiruser-css:hover{
+    border: none;
+    width: 170px;
+    height: 60px;
+    margin: 30px;
+    background-color: white;
+    border-radius: 30px;
+    color: rgb(121, 0, 0);
+    font-size: 20px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    cursor: pointer;
+    transition: 0.5s;
+
 }

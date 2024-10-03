@@ -24,7 +24,10 @@ const Usuario = ({ theme, setTheme }) => {
                         <p>SENHA</p>
                         <input className='input-css' type='password' placeholder='*********' />
                     </div>
-                    <div className="button-usuario"></div>
+                    <div className="button-usuario">
+                        <button className='button-edituser-css'>EDITAR USER</button>
+                        <button className='button-excluiruser-css'>EXCLUIR USER</button>
+                    </div>
                 </div>
                 <div className="assinaturas-usuario">
                     <div className="scroll-assinaturas"></div>
