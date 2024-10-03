@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import Plantas from './pages/Plantas';
 import Desidratadas from './pages/Desidratadas';
 import Arranjos from './pages/Arranjos';
 import Orquideas from './pages/Orquideas';
 import Usuario from './pages/Usuario';
+import AdmProds from './pages/AdmProds';
+
 
 const App = () => {
   const current_theme = localStorage.getItem('current_theme');
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/arranjos" element={<Arranjos />} />
           <Route path="/orquideas" element={<Orquideas />} />
           <Route path="/usuario" element={<Usuario />} />
+          <Route path='/admprods' element={<AdmProds/>} />
         </Routes>
       </Router>
     </div>

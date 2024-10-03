@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.usuario {
+.admprods {
     background-color: var(--cor-2);
     height: 87.8vh;
     display: flex;
@@ -13,7 +13,7 @@
 
 }
 
-.dark .usuario {
+.dark .admprods {
     background-color: var(--cor-1);
     height: 87.8vh;
     display: flex;
@@ -32,6 +32,8 @@
     -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
     box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);  
     border-radius: 25px;
+    flex-direction: column;
+    transition: 0.5s;
 }
 
 .dark .principal {
@@ -43,181 +45,204 @@
     -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
     box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);  
     border-radius: 25px;
+    transition: 0.5s;
 }
 
-.infos-usuario {
-    background-color: transparent;
-    width: 50%;
-    height: 400px;
-    border-radius: 25px;
-    
-}
-
-.foto-usuario {
-    background-image: url('../assets/user_light.png');
-    background-size: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
+.div-infos-adm{
+    width: 100%;
     height: 30%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    border-radius: 25px;
-    
-}
-
-.dark .foto-usuario {
-    background-image: url('../assets/user_dark.png');
-    background-size: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 30%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-.dark .foto-usuario {
-    background-color: var(--cor-2);
-    height: 30%;
-    justify-content: center;
-    align-items: end;
-    display: flex;
-
-}
-
-
-
-.nome-usuario {
     background-color: var(--cor-1);
-    height: 10%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 10px;
-}
-
-.dark .nome-usuario {
-    background-color: var(--cor-2);
-    height: 10%;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 10px;
-}
-
-
-.nome-usuario p{
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--cor-2);
-
-}
-
-.dark .nome-usuario p{
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--cor-1);
-
-}
-
-
-
-.input-usuario {
-    display: flex;
     flex-direction: column;
-    margin-bottom: 20px; /* Espaço entre os grupos de inputs */
-    margin-left: 15%;
+    border-radius: 25px;
+    transition: 0.5s;
+}
 
-}   
+.dark .div-infos-adm{
+    width: 100%;
+    height: 30%;
+    background-color: var(--cor-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 25px;
+    transition: 0.5s;
+}
 
-.input-usuario p {
-    margin: 5px 0; /* Margem acima e abaixo dos parágrafos */
-    font-size: 15px;
+.foto-adm{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/user_light.png');
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+
+}
+.dark .foto-adm{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/user_dark.png');
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+
+}
+
+.nome-adm p{
+    font-size: 18px;
     font-weight: bold;
     color: var(--cor-2);
-    display: flex;
-    align-items: center;
+    transition: 0.5s;
 }
 
-.dark .input-usuario p {
-    margin: 5px 0; /* Margem acima e abaixo dos parágrafos */
-    font-size: 15px;
+.dark .nome-adm p{
+    font-size: 18px;
     font-weight: bold;
     color: var(--cor-1);
+}
+
+.principal-dois{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container-mid{
+    display: flex;
+    width: 95%;
+    height: 75%;
+    border-radius: 25px;
+    -webkit-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+}
+
+.container-list{
+    display: flex;
+    width: 50%;
+    height: 100%;
+
+}
+
+.container-foto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-image: url('../assets/prod-foto.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 25px;   /* Apenas o canto superior direito */
+    border-bottom-right-radius: 25px; /* Apenas o canto inferior direito */
+    
+
+}
+
+.container-foto p{
+    font-size: 45px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    
+}
+
+.container-button{
+    width: 100%;
+    height: 25%;
     display: flex;
     align-items: center;
 }
 
-.input-css {
-    /* padding: 8px; Espaçamento interno dos inputs */
-    margin-top: 10px; /* Espaço entre o parágrafo e o input */
-    width: 85%;
-    height: 35px;
-    box-sizing: border-box;
-    border: 2px solid var(--cor-6);
+.list-css{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-top-left-radius: 25px;   /* Apenas o canto superior direito */
+    border-bottom-left-radius: 25px; /* Apenas o canto inferior direito */
+}
+
+.button-div{
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.button-prod-css{
+    border: none;
+    width: 150px;
+    height: 40px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 30px;
+    color: var(--cor-1);
+    font-size: 12px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    cursor: pointer;
+    -webkit-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+
+}
+
+.button-excluirprod-css{
+    border: none;
+    width: 150px;
+    height: 40px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 30px;
+    color: rgb(168, 4, 4);
+    font-size: 12px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    cursor: pointer;
+    -webkit-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+
+}
+
+.button-excluirprod-css:hover{
+    border: none;
+    width: 155px;
+    height: 45px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 30px;
+    color: rgb(168, 4, 4);
     font-size: 13px;
-}
-
-
-
-.button-usuario {
-    background-color: var(--cor-1);
-    height: 20%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.dark .button-usuario {
-    background-color: var(--cor-2);
-    height: 20%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.assinaturas-usuario {
-    background-color: var(--cor-1);
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 2px solid #607a69; 
-    border-top-right-radius: 25px;   /* Apenas o canto superior direito */
-    border-bottom-right-radius: 25px; /* Apenas o canto inferior direito */
-}
-
-.dark .assinaturas-usuario {
-    background-color: var(--cor-2);
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 2px solid #dfdbc9; 
-    border-top-right-radius: 25px;   /* Apenas o canto superior direito */
-    border-bottom-right-radius: 25px; /* Apenas o canto inferior direito */
-}
-
-.scroll-assinaturas {
-    background-color: white;
-    height: 80%;
-    width: 92%;
-}
-
-.usuario-user-icon{
-    width: 120px;
-}
-
-.button-edituser-css{
-    border: none;
-    width: 150px;
-    height: 40px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 30px;
-    color: var(--cor-1);
-    font-size: 18px;
     font-family: "Fredoka", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -228,18 +253,19 @@
     -webkit-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
     box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
+    transition: 0.5s;
 
 }
 
-.button-excluiruser-css{
+.button-prod-css:hover{
     border: none;
-    width: 150px;
-    height: 40px;
+    width: 155px;
+    height: 45px;
     margin: 20px;
     background-color: white;
     border-radius: 30px;
-    color: rgb(121, 0, 0);
-    font-size: 18px;
+    color: var(--cor-1);
+    font-size: 13px;
     font-family: "Fredoka", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -250,46 +276,9 @@
     -webkit-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
     box-shadow: -1px 23px 32px -15px rgba(0,0,0,0.75);
-
-}
-
-.button-edituser-css:hover{
-    border: none;
-    width: 170px;
-    height: 60px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 30px;
-    color: var(--cor-1);
-    font-size: 20px;
-    font-family: "Fredoka", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-    "wdth" 100;
-    cursor: pointer;
     transition: 0.5s;
-
 }
 
-.button-excluiruser-css:hover{
-    border: none;
-    width: 170px;
-    height: 60px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 30px;
-    color: rgb(121, 0, 0);
-    font-size: 20px;
-    font-family: "Fredoka", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-    "wdth" 100;
-    cursor: pointer;
-    transition: 0.5s;
 
 
-}
+

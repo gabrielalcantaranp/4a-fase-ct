@@ -1,7 +1,6 @@
 import React from 'react';
 import './Usuario.css';
-import user_light from '../assets/user_light.png';
-import user_dark from '../assets/user_dark.png';
+import FotoUser from '../components/FotoUser/FotoUser';
 
 const Usuario = ({ theme, setTheme }) => {
     return (
@@ -10,7 +9,7 @@ const Usuario = ({ theme, setTheme }) => {
                 <div className='infos-usuario'>
                     <div className="foto-usuario">
                         <div className="foto">
-                            <img src={user_dark} alt='' className='usuario-user-icon' />
+                                                    
                         </div>
                     </div>
                     <div className="nome-usuario">
