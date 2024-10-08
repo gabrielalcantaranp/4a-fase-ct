@@ -215,6 +215,26 @@
 
 }
 
+.button-edituser-css:hover{
+    border: none;
+    width: 170px;
+    height: 60px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 30px;
+    color: var(--cor-1);
+    font-size: 20px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
 .button-excluiruser-css{
     border: none;
     width: 150px;
@@ -237,25 +257,7 @@
 
 }
 
-.button-edituser-css:hover{
-    border: none;
-    width: 170px;
-    height: 60px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 30px;
-    color: var(--cor-1);
-    font-size: 20px;
-    font-family: "Fredoka", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-    "wdth" 100;
-    cursor: pointer;
-    transition: 0.5s;
 
-}
 
 .button-excluiruser-css:hover{
     border: none;

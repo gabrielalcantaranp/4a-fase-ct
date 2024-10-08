@@ -12,6 +12,8 @@ import TelaArranjos from './pages/TelaArranjos';
 import TelaPlantas from './pages/TelaPlantas';
 import TelaDesidratadas from './pages/TelaDesidratadas';
 import TelaOrquideas from './pages/TelaOrquideas';
+import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
 
 const App = () => {
   const current_theme = localStorage.getItem('current_theme');
@@ -37,6 +39,8 @@ const App = () => {
           <Route path='/telaplantas' element={<TelaPlantas/>} />
           <Route path='/teladesidratadas' element={<TelaDesidratadas/>} />
           <Route path='/telaorquideas' element={<TelaOrquideas/>} />
+          <Route path='/login' element={<Login theme={theme} setTheme={setTheme}/>} />
+          <Route path='/cadastro' element={<Cadastro theme={theme} setTheme={setTheme}/>} />
         </Routes>
       </Router>
     </div>

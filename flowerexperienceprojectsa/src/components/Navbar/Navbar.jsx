@@ -30,6 +30,8 @@ const toggle_mode = ()=>{
             <Link to='arranjos' className='text_navbar'> ARRANJOS</Link>
             <Link to='orquideas' className='text_navbar'> ORQUÍDEAS</Link>
             <Link to='adm' className='text_navbar'>ADM</Link>
+            <Link to='login' className='text_navbar'>LOGIN</Link>
+            <Link to='cadastro' className='text_navbar'>CADASTRO</Link>
         </ul>
 
         <div className='search-box'>
