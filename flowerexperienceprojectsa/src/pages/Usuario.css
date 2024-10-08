@@ -149,7 +149,7 @@
 
 .input-usuario p {
     margin: 5px 0; /* Margem acima e abaixo dos parágrafos */
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     color: var(--cor-2);
     display: flex;
@@ -159,7 +159,7 @@
 
 .dark .input-usuario p {
     margin: 5px 0; /* Margem acima e abaixo dos parágrafos */
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     color: var(--cor-1);
     display: flex;
