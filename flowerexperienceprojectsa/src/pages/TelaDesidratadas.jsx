@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './TelaDesidratadas.css';
+import Modal from '../components/Modal/Modal'; // Importação do Modal
 import des_um from '../assets/des-um.png';
 import des_dois from '../assets/des-dois.png';
 import des_tres from '../assets/des-tres.png';
@@ -8,7 +9,10 @@ import des_cin from '../assets/des-cin.png';
 
 const TelaDesidratadas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
     const [showCard, setShowCard] = useState(false);
-    const [quantidade, setQuantidade] = useState(1); // Estado para a quantidade
+    const [quantidade, setQuantidade] = useState(1); 
+    const [modalOpen, setModalOpen] = useState(false); 
+    const [modalTitle, setModalTitle] = useState(''); 
+    const [modalMessage, setModalMessage] = useState(''); 
 
     const handleToggleCard = () => {
         setShowCard(!showCard);
@@ -16,16 +20,22 @@ const TelaDesidratadas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
 
     const handleAddToPedido = () => {
         if (!isLoggedIn) {
-            alert('Você não está logado. Faça login para adicionar pedidos!');
-            return; // Impede a adição do pedido se o usuário não estiver logado
+            setModalTitle('Ops');
+            setModalMessage('Você não está logado. Faça login para adicionar pedidos!');
+            setModalOpen(true);
+            return; 
         }
 
         if (quantidade > 0) {
-            addPedido({ nome: 'Desidratada', quantidade }); // Adiciona a desidratada ao pedido
-            alert(`Adicionado ${quantidade} desidratada(s) ao pedido!`); // Alerta de confirmação
-            setQuantidade(1); // Reseta a quantidade para 1 após adicionar
+            addPedido({ nome: 'Desidratada', quantidade }); 
+            setModalTitle('Sucesso');
+            setModalMessage(`Adicionado ${quantidade} desidratada(s) ao pedido!`); 
+            setModalOpen(true);
+            setQuantidade(1); 
         } else {
-            alert('Quantidade inválida. Por favor, insira um número maior que 0.'); // Validação da quantidade
+            setModalTitle('Erro');
+            setModalMessage('Quantidade inválida. Por favor, insira um número maior que 0.'); 
+            setModalOpen(true);
         }
     };
 
@@ -55,9 +65,9 @@ const TelaDesidratadas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
                     <div className='ta-infos-desidratadas'>
                         <div className='ta-infos-box-desidratadas'>
                             <p className='ta-infos-p-desidratadas'>
-                                Experimente transformar o seu lar com estilosas e impactantes Desidratadas.<br/><br/>
-                                Tamanho: 80cm de altura por 70 cm de largura.<br/>
-                                Vasos: Papelão colorido, Vasos de polietileno ou vidro.<br/>
+                                Experimente transformar o seu lar com estilosas e impactantes Desidratadas.<br /><br />
+                                Tamanho: 80cm de altura por 70 cm de largura.<br />
+                                Vasos: Papelão colorido, Vasos de polietileno ou vidro.<br />
                                 Renovação: À cada 7 ou 15 dias.
                             </p>
                         </div>
@@ -99,6 +109,13 @@ const TelaDesidratadas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
                     <button className='btn-fechar-desidratadas' onClick={handleToggleCard}>FECHAR</button>
                 </div>
             )}
+
+            <Modal 
+                isOpen={modalOpen} 
+                onClose={() => setModalOpen(false)} 
+                title={modalTitle} 
+                message={modalMessage} 
+            />
         </div>
     );
 }

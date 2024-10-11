@@ -31,8 +31,8 @@ const Usuario = ({ theme, pedidos, removePedido, clearPedidos, handleLogout }) =
     const handleEditUser = () => {
         if (usuario) {
             const updatedUser = { ...usuario, nome, email, senha };
-            localStorage.setItem(email, JSON.stringify(updatedUser));
-            localStorage.setItem('emailLogado', email);
+            localStorage.setItem(email, JSON.stringify(updatedUser)); // Armazena com o e-mail como chave
+            localStorage.setItem('emailLogado', email); // Atualiza o e-mail logado
             alert('Usuário editado com sucesso!');
         }
     };
@@ -42,12 +42,12 @@ const Usuario = ({ theme, pedidos, removePedido, clearPedidos, handleLogout }) =
             const confirmDelete = window.confirm('Tem certeza que deseja excluir sua conta?');
             if (confirmDelete) {
                 console.log(`Excluindo usuário: ${usuario.email}`);
-                localStorage.removeItem(usuario.email); // Remove os dados do usuário
-                localStorage.removeItem('emailLogado'); // Remove o email logado
-                handleLogout(); // Desloga o usuário
-                clearPedidos(); // Limpa os pedidos
+                localStorage.removeItem(email); // Remove o usuário com o e-mail correto
+                localStorage.removeItem('emailLogado');
+                handleLogout();
+                clearPedidos();
                 alert('Usuário excluído com sucesso!');
-                navigate('/'); // Redireciona para a página inicial
+                navigate('/');
             }
         }
     };

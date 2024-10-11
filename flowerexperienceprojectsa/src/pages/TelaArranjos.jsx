@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import './TelaArranjos.css';
+import Modal from '../components/Modal/Modal';
 import arr_um from '../assets/arr-um.png';
 import arr_dois from '../assets/arr-dois.png';
 import arr_tres from '../assets/arr-tres.png';
 import arr_qua from '../assets/arr-qua.png';
 import arr_cin from '../assets/arr-cin.png';
 
+
 const TelaArranjos = ({ theme, setTheme, addPedido, isLoggedIn }) => {
     const [showCard, setShowCard] = useState(false);
-    const [quantidade, setQuantidade] = useState(1); // Estado para a quantidade
+    const [quantidade, setQuantidade] = useState(1);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalTitle, setModalTitle] = useState('');
+    const [modalMessage, setModalMessage] = useState('');
 
     const handleToggleCard = () => {
         setShowCard(!showCard);
@@ -16,16 +21,22 @@ const TelaArranjos = ({ theme, setTheme, addPedido, isLoggedIn }) => {
 
     const handleAddToPedido = () => {
         if (!isLoggedIn) {
-            alert('Você não está logado. Faça login para adicionar pedidos!');
-            return; // Impede a adição do pedido se o usuário não estiver logado
+            setModalTitle('Ops');
+            setModalMessage('Você não está logado. Faça login para adicionar pedidos!');
+            setModalOpen(true);
+            return; 
         }
 
         if (quantidade > 0) {
-            addPedido({ nome: 'Arranjo', quantidade }); // Adiciona o arranjo ao pedido
-            alert(`Adicionado ${quantidade} arranjo(s) ao pedido!`); // Alerta de confirmação
-            setQuantidade(1); // Reseta a quantidade para 1 após adicionar
+            addPedido({ nome: 'Arranjo', quantidade });
+            setModalTitle('Sucesso');
+            setModalMessage(`Adicionado ${quantidade} arranjo(s) ao pedido!`);
+            setModalOpen(true);
+            setQuantidade(1); 
         } else {
-            alert('Quantidade inválida. Por favor, insira um número maior que 0.'); // Validação da quantidade
+            setModalTitle('Erro');
+            setModalMessage('Quantidade inválida. Por favor, insira um número maior que 0.');
+            setModalOpen(true);
         }
     };
 
@@ -99,11 +110,19 @@ const TelaArranjos = ({ theme, setTheme, addPedido, isLoggedIn }) => {
                     <button className='btn-fechar-arranjos' onClick={handleToggleCard}>FECHAR</button>
                 </div>
             )}
+
+            <Modal 
+                isOpen={modalOpen} 
+                onClose={() => setModalOpen(false)} 
+                title={modalTitle} 
+                message={modalMessage} 
+            />
         </div>
     );
 }
 
 export default TelaArranjos;
+
 
 
 

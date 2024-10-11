@@ -10,7 +10,7 @@ const Cadastro = ({ theme }) => {
     const [senha, setSenha] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
     const [erro, setErro] = useState('');
-    const navigate = useNavigate(); // Hook para navegação
+    const navigate = useNavigate();
 
     const handleCadastro = (e) => {
         e.preventDefault();
@@ -20,8 +20,14 @@ const Cadastro = ({ theme }) => {
             return;
         }
 
-        const usuario = { nome, email, senha };
-        localStorage.setItem(email, JSON.stringify(usuario)); // Armazenando no local storage
+        const usuario = {
+            id: Date.now(), // Gera um ID único baseado no timestamp
+            nome,
+            email,
+            senha,
+        };
+
+        localStorage.setItem(email, JSON.stringify(usuario)); // Armazena o usuário no localStorage
 
         // Limpa os campos após o cadastro
         setNome('');
@@ -31,7 +37,6 @@ const Cadastro = ({ theme }) => {
         setErro('');
         alert('Cadastro realizado com sucesso!');
 
-        // Redireciona para a página de login
         navigate('/login');
     };
 
@@ -95,4 +100,3 @@ const Cadastro = ({ theme }) => {
 };
 
 export default Cadastro;
-

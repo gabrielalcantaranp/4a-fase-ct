@@ -5,10 +5,14 @@ import planta_dois from '../assets/planta-dois.png';
 import planta_tre from '../assets/planta-tre.png';
 import planta_qua from '../assets/planta-qua.png';
 import planta_cin from '../assets/planta-cin.png';
+import Modal from '../components/Modal/Modal'; 
 
 const TelaPlantas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
     const [showCard, setShowCard] = useState(false);
-    const [quantidade, setQuantidade] = useState(1); // Estado para a quantidade
+    const [quantidade, setQuantidade] = useState(1); 
+    const [modalOpen, setModalOpen] = useState(false); 
+    const [modalTitle, setModalTitle] = useState(''); 
+    const [modalMessage, setModalMessage] = useState(''); 
 
     const handleToggleCard = () => {
         setShowCard(!showCard);
@@ -16,16 +20,22 @@ const TelaPlantas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
 
     const handleAddToPedido = () => {
         if (!isLoggedIn) {
-            alert('Você não está logado. Faça login para adicionar pedidos!');
-            return; // Impede a adição do pedido se o usuário não estiver logado
+            setModalTitle('Ops');
+            setModalMessage('Você não está logado. Faça login para adicionar pedidos!');
+            setModalOpen(true);
+            return; 
         }
 
         if (quantidade > 0) {
-            addPedido({ nome: 'Planta', quantidade }); // Adiciona a planta ao pedido
-            alert(`Adicionado ${quantidade} planta(s) ao pedido!`); // Alerta de confirmação
-            setQuantidade(1); // Reseta a quantidade para 1 após adicionar
+            addPedido({ nome: 'Planta', quantidade }); 
+            setModalTitle('Sucesso');
+            setModalMessage(`Adicionado ${quantidade} planta(s) ao pedido!`); 
+            setModalOpen(true);
+            setQuantidade(1); 
         } else {
-            alert('Quantidade inválida. Por favor, insira um número maior que 0.'); // Validação da quantidade
+            setModalTitle('Erro');
+            setModalMessage('Quantidade inválida. Por favor, insira um número maior que 0.'); 
+            setModalOpen(true);
         }
     };
 
@@ -98,6 +108,13 @@ const TelaPlantas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
                     <button className='btn-fechar-plantas' onClick={handleToggleCard}>FECHAR</button>
                 </div>
             )}
+
+            <Modal 
+                isOpen={modalOpen} 
+                onClose={() => setModalOpen(false)} 
+                title={modalTitle} 
+                message={modalMessage} 
+            />
         </div>
     );
 }

@@ -5,10 +5,14 @@ import orq_dois from '../assets/orq-dois.png';
 import orq_tres from '../assets/orq-tres.png';
 import orq_qua from '../assets/orq-qua.png';
 import orq_cin from '../assets/orq-cin.png';
+import Modal from '../components/Modal/Modal'; 
 
 const TelaOrquideas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
     const [showCard, setShowCard] = useState(false);
-    const [quantidade, setQuantidade] = useState(1); // Estado para a quantidade
+    const [quantidade, setQuantidade] = useState(1); 
+    const [modalOpen, setModalOpen] = useState(false); 
+    const [modalTitle, setModalTitle] = useState(''); 
+    const [modalMessage, setModalMessage] = useState(''); 
 
     const handleToggleCard = () => {
         setShowCard(!showCard);
@@ -16,16 +20,22 @@ const TelaOrquideas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
 
     const handleAddToPedido = () => {
         if (!isLoggedIn) {
-            alert('Você não está logado. Faça login para adicionar pedidos!');
-            return; // Impede a adição do pedido se o usuário não estiver logado
+            setModalTitle('Ops');
+            setModalMessage('Você não está logado. Faça login para adicionar pedidos!');
+            setModalOpen(true);
+            return; 
         }
 
         if (quantidade > 0) {
-            addPedido({ nome: 'Orquídea', quantidade }); // Adiciona a orquídea ao pedido
-            alert(`Adicionado ${quantidade} orquídea(s) ao pedido!`); // Alerta de confirmação
-            setQuantidade(1); // Reseta a quantidade para 1 após adicionar
+            addPedido({ nome: 'Orquídea', quantidade }); 
+            setModalTitle('Sucesso');
+            setModalMessage(`Adicionado ${quantidade} orquídea(s) ao pedido!`); 
+            setModalOpen(true);
+            setQuantidade(1); 
         } else {
-            alert('Quantidade inválida. Por favor, insira um número maior que 0.'); // Validação da quantidade
+            setModalTitle('Erro');
+            setModalMessage('Quantidade inválida. Por favor, insira um número maior que 0.'); 
+            setModalOpen(true);
         }
     };
 
@@ -97,10 +107,15 @@ const TelaOrquideas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
                     <button className='btn-fechar-orquideas' onClick={handleToggleCard}>FECHAR</button>
                 </div>
             )}
+
+            <Modal 
+                isOpen={modalOpen} 
+                onClose={() => setModalOpen(false)} 
+                title={modalTitle} 
+                message={modalMessage} 
+            />
         </div>
     );
 }
 
 export default TelaOrquideas;
-
-

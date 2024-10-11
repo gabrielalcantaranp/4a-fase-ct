@@ -45,9 +45,8 @@ const App = () => {
     setIsAdmin(false);
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('isAdmin');
-    localStorage.removeItem('emailLogado'); // Remove o email logado
-    // Limpar pedidos, se necessário
-    setPedidos([]); // Opcional, se você quiser limpar os pedidos ao fazer logout
+    localStorage.removeItem('emailLogado');
+    setPedidos([]); 
   };
 
   const addPedido = (pedido) => {
@@ -59,7 +58,7 @@ const App = () => {
   };
 
   const clearPedidos = () => {
-    setPedidos([]); // Limpa todos os pedidos
+    setPedidos([]); 
   };
 
   return (
@@ -81,9 +80,9 @@ const App = () => {
     <Route path="/usuario" element={<Usuario pedidos={pedidos} removePedido={removePedido} clearPedidos={clearPedidos} handleLogout={handleLogout} />} />
     <Route path="/adm" element={<Adm />} />
     <Route path="/telaarranjos" element={<TelaArranjos addPedido={addPedido} isLoggedIn={isLoggedIn} />} />
-    <Route path="/telaplantas" element={<TelaPlantas addPedido={addPedido} />} />
-    <Route path="/teladesidratadas" element={<TelaDesidratadas addPedido={addPedido} />} />
-    <Route path="/telaorquideas" element={<TelaOrquideas addPedido={addPedido} />} />
+    <Route path="/telaplantas" element={<TelaPlantas addPedido={addPedido} isLoggedIn={isLoggedIn} />} />
+    <Route path="/teladesidratadas" element={<TelaDesidratadas addPedido={addPedido} isLoggedIn={isLoggedIn}/>} />
+    <Route path="/telaorquideas" element={<TelaOrquideas addPedido={addPedido} isLoggedIn={isLoggedIn} />} />
     <Route path="/login" element={<Login theme={theme} setTheme={setTheme} handleLogin={handleLogin} />} />
     <Route path="/cadastro" element={<Cadastro theme={theme} setTheme={setTheme} />} />
     <Route path="/sair" element={<Home theme={theme} setTheme={setTheme} />} />
