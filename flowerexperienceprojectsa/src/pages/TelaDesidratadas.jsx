@@ -25,19 +25,39 @@ const TelaDesidratadas = ({ theme, setTheme, addPedido, isLoggedIn }) => {
             setModalOpen(true);
             return; 
         }
-
+    
         if (quantidade > 0) {
-            addPedido({ nome: 'Desidratada', quantidade }); 
-            setModalTitle('Sucesso');
-            setModalMessage(`Adicionado ${quantidade} desidratada(s) ao pedido!`); 
-            setModalOpen(true);
-            setQuantidade(1); 
+            // Recupera o usuário do localStorage
+            const emailLogado = localStorage.getItem('emailLogado');
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Carregar todos os usuários
+            const usuario = usuarios.find(user => user.email === emailLogado); // Encontrar o usuário
+    
+            if (usuario) {
+                // Adiciona o pedido ao array de pedidos do usuário
+                usuario.pedidos.push({ nome: 'Desidratada', quantidade });
+    
+                // Atualiza o localStorage com o usuário modificado
+                const userIndex = usuarios.findIndex(user => user.email === emailLogado);
+                usuarios[userIndex] = usuario; // Atualiza o usuário no array
+                localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Salva o array atualizado
+    
+                setModalTitle('Sucesso');
+                setModalMessage(`Adicionado ${quantidade} desidratada(s) ao pedido!`); 
+                setModalOpen(true);
+                setQuantidade(1); 
+            } else {
+                setModalTitle('Erro');
+                setModalMessage('Usuário não encontrado no sistema.');
+                setModalOpen(true);
+            }
         } else {
             setModalTitle('Erro');
             setModalMessage('Quantidade inválida. Por favor, insira um número maior que 0.'); 
             setModalOpen(true);
         }
     };
+    
+    
 
     return (
         <div className='tela-desidratadas'>

@@ -10,10 +10,12 @@ const Login = ({ theme, setTheme, handleLogin }) => {
     const navigate = useNavigate(); // Para redirecionar após login
 
     const handleSubmit = () => {
-        // Recupera o usuário usando o email como chave
-        const usuario = JSON.parse(localStorage.getItem(email));
-
+        // Recupera todos os usuários do localStorage
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    
         // Verifica se o usuário existe e se a senha está correta
+        const usuario = usuarios.find(user => user.email === email);
+    
         if (usuario && usuario.senha === senha) {
             alert("Login realizado com sucesso!");
             handleLogin(false); // Chama a função de login com isAdmin false

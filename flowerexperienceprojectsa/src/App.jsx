@@ -81,7 +81,7 @@ const App = () => {
     <Route path="/adm" element={<Adm />} />
     <Route path="/telaarranjos" element={<TelaArranjos addPedido={addPedido} isLoggedIn={isLoggedIn} />} />
     <Route path="/telaplantas" element={<TelaPlantas addPedido={addPedido} isLoggedIn={isLoggedIn} />} />
-    <Route path="/teladesidratadas" element={<TelaDesidratadas addPedido={addPedido} isLoggedIn={isLoggedIn}/>} />
+    <Route path="/teladesidratadas" element={<TelaDesidratadas addPedido={addPedido} isLoggedIn={isLoggedIn} />} />
     <Route path="/telaorquideas" element={<TelaOrquideas addPedido={addPedido} isLoggedIn={isLoggedIn} />} />
     <Route path="/login" element={<Login theme={theme} setTheme={setTheme} handleLogin={handleLogin} />} />
     <Route path="/cadastro" element={<Cadastro theme={theme} setTheme={setTheme} />} />

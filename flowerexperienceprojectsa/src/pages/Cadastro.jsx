@@ -15,26 +15,43 @@ const Cadastro = ({ theme }) => {
     const handleCadastro = (e) => {
         e.preventDefault();
 
+        if (senha.length < 8) {
+            setErro('A senha deve ter pelo menos 8 caracteres.');
+            return;
+        }
+
         if (senha !== confirmarSenha) {
             setErro('As senhas não coincidem.');
             return;
         }
 
+        // Verificar se o email já existe
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const emailExistente = usuarios.some(user => user.email === email);
+
+        if (emailExistente) {
+            setErro('Este e-mail já está cadastrado.');
+            return;
+        }
+
         const usuario = {
-            id: Date.now(), // Gera um ID único baseado no timestamp
+            id: Date.now(),
             nome,
             email,
             senha,
+            pedidos: [] 
         };
 
-        localStorage.setItem(email, JSON.stringify(usuario)); // Armazena o usuário no localStorage
+        // Adicionar o novo usuário ao array
+        usuarios.push(usuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Armazenar a lista de usuários
 
-        // Limpa os campos após o cadastro
         setNome('');
         setEmail('');
         setSenha('');
         setConfirmarSenha('');
         setErro('');
+
         alert('Cadastro realizado com sucesso!');
 
         navigate('/login');
@@ -100,3 +117,4 @@ const Cadastro = ({ theme }) => {
 };
 
 export default Cadastro;
+
