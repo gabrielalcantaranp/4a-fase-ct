@@ -28,19 +28,19 @@ const TelaArranjos = ({ theme, setTheme, addPedido, isLoggedIn }) => {
         }
     
         if (quantidade > 0) {
-            // Recupera o usuário do localStorage
+
             const emailLogado = localStorage.getItem('emailLogado');
-            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Carregar todos os usuários
-            const usuario = usuarios.find(user => user.email === emailLogado); // Encontrar o usuário pelo e-mail
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; 
+            const usuario = usuarios.find(user => user.email === emailLogado); 
     
             if (usuario) {
-                // Adiciona o pedido ao array de pedidos do usuário
+                
                 usuario.pedidos.push({ nome: 'Arranjo', quantidade });
     
-                // Atualiza o localStorage com o usuário modificado
+                
                 const userIndex = usuarios.findIndex(user => user.email === emailLogado);
-                usuarios[userIndex] = usuario; // Atualiza o usuário no array
-                localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Salva o array atualizado
+                usuarios[userIndex] = usuario; 
+                localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
     
                 setModalTitle('Sucesso');
                 setModalMessage(`Adicionado ${quantidade} arranjo(s) ao pedido!`);

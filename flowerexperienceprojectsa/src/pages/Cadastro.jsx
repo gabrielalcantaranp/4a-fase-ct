@@ -25,7 +25,7 @@ const Cadastro = ({ theme }) => {
             return;
         }
 
-        // Verificar se o email já existe
+
         const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
         const emailExistente = usuarios.some(user => user.email === email);
 
@@ -42,9 +42,9 @@ const Cadastro = ({ theme }) => {
             pedidos: [] 
         };
 
-        // Adicionar o novo usuário ao array
+       
         usuarios.push(usuario);
-        localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Armazenar a lista de usuários
+        localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
 
         setNome('');
         setEmail('');

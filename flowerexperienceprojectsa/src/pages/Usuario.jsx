@@ -19,8 +19,8 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
         const emailLogado = localStorage.getItem('emailLogado');
 
         if (emailLogado) {
-            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Carrega todos os usuários
-            const dadosUsuario = usuarios.find(user => user.email === emailLogado); // Encontra o usuário pelo email
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; 
+            const dadosUsuario = usuarios.find(user => user.email === emailLogado); 
 
             if (dadosUsuario) {
                 setUsuario(dadosUsuario);
@@ -40,16 +40,16 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
         if (usuario) {
             const updatedUser = { ...usuario, nome, email, senha, pedidos };
             const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-            const index = usuarios.findIndex(user => user.email === usuario.email); // Encontra o índice do usuário
+            const index = usuarios.findIndex(user => user.email === usuario.email);
     
-            // Se o e-mail foi alterado, atualize o emailLogado
+            
             if (usuario.email !== email) {
-                localStorage.setItem('emailLogado', email); // Atualiza o email logado
+                localStorage.setItem('emailLogado', email); 
             }
     
-            usuarios[index] = updatedUser; // Atualiza o usuário no array
-            localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Salva o array atualizado
-            setUsuario(updatedUser); // Atualiza o estado do usuário
+            usuarios[index] = updatedUser; 
+            localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
+            setUsuario(updatedUser); 
             setModalTitle('Sucesso');
             setModalMessage('Usuário editado com sucesso!');
             setModalOpen(true);
@@ -61,8 +61,8 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
             const confirmDelete = window.confirm('Tem certeza que deseja excluir sua conta?');
             if (confirmDelete) {
                 const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-                const updatedUsers = usuarios.filter(user => user.email !== usuario.email); // Remove o usuário
-                localStorage.setItem('usuarios', JSON.stringify(updatedUsers)); // Atualiza o localStorage
+                const updatedUsers = usuarios.filter(user => user.email !== usuario.email); 
+                localStorage.setItem('usuarios', JSON.stringify(updatedUsers)); 
                 localStorage.removeItem('emailLogado');
                 handleLogout();
                 setModalTitle('Sucesso');
@@ -82,8 +82,8 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
             const updatedUser = { ...usuario, pedidos: updatedPedidos };
             const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
             const userIndex = usuarios.findIndex(user => user.email === usuario.email);
-            usuarios[userIndex] = updatedUser; // Atualiza os pedidos do usuário
-            localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Salva o array atualizado
+            usuarios[userIndex] = updatedUser; 
+            localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
         }
     };
 
@@ -100,8 +100,8 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
             const updatedUser = { ...usuario, pedidos: [] };
             const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
             const userIndex = usuarios.findIndex(user => user.email === usuario.email);
-            usuarios[userIndex] = updatedUser; // Limpa os pedidos do usuário
-            localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Atualiza o localStorage
+            usuarios[userIndex] = updatedUser; 
+            localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
             setPedidos([]);
         }
         setModalTitle('Sucesso');

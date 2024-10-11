@@ -7,24 +7,24 @@ import dark_logo_red from '../assets/logo-redonda-dark.png';
 const Login = ({ theme, setTheme, handleLogin }) => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const navigate = useNavigate(); // Para redirecionar após login
+    const navigate = useNavigate(); 
 
     const handleSubmit = () => {
-        // Recupera todos os usuários do localStorage
+       
         const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     
-        // Verifica se o usuário existe e se a senha está correta
+    
         const usuario = usuarios.find(user => user.email === email);
     
         if (usuario && usuario.senha === senha) {
             alert("Login realizado com sucesso!");
-            handleLogin(false); // Chama a função de login com isAdmin false
-            localStorage.setItem('emailLogado', email); // Armazena o email logado
-            navigate('/usuario'); // Redireciona para a página do usuário
+            handleLogin(false); 
+            localStorage.setItem('emailLogado', email); 
+            navigate('/usuario'); 
         } else if (email === 'adm@gmail.com' && senha === '123') {
             alert("Login como administrador realizado com sucesso!");
-            handleLogin(true); // Chama a função de login com isAdmin true
-            navigate('/'); // Redireciona para a página inicial
+            handleLogin(true); 
+            navigate('/'); 
         } else {
             alert("E-mail ou senha incorretos.");
         }
