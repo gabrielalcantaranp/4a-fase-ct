@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Usuario.css';
 import Modal from '../components/Modal/Modal';
+import lixo from '../assets/lixo.png'
+import img_pedido from '../assets/img-pedido.png'
+
 
 const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
     const [usuario, setUsuario] = useState(null);
@@ -19,8 +22,8 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
         const emailLogado = localStorage.getItem('emailLogado');
 
         if (emailLogado) {
-            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; 
-            const dadosUsuario = usuarios.find(user => user.email === emailLogado); 
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            const dadosUsuario = usuarios.find(user => user.email === emailLogado);
 
             if (dadosUsuario) {
                 setUsuario(dadosUsuario);
@@ -41,15 +44,15 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
             const updatedUser = { ...usuario, nome, email, senha, pedidos };
             const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
             const index = usuarios.findIndex(user => user.email === usuario.email);
-    
-            
+
+
             if (usuario.email !== email) {
-                localStorage.setItem('emailLogado', email); 
+                localStorage.setItem('emailLogado', email);
             }
-    
-            usuarios[index] = updatedUser; 
-            localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
-            setUsuario(updatedUser); 
+
+            usuarios[index] = updatedUser;
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            setUsuario(updatedUser);
             setModalTitle('Sucesso');
             setModalMessage('Usuário editado com sucesso!');
             setModalOpen(true);
@@ -61,8 +64,8 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
             const confirmDelete = window.confirm('Tem certeza que deseja excluir sua conta?');
             if (confirmDelete) {
                 const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-                const updatedUsers = usuarios.filter(user => user.email !== usuario.email); 
-                localStorage.setItem('usuarios', JSON.stringify(updatedUsers)); 
+                const updatedUsers = usuarios.filter(user => user.email !== usuario.email);
+                localStorage.setItem('usuarios', JSON.stringify(updatedUsers));
                 localStorage.removeItem('emailLogado');
                 handleLogout();
                 setModalTitle('Sucesso');
@@ -82,8 +85,8 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
             const updatedUser = { ...usuario, pedidos: updatedPedidos };
             const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
             const userIndex = usuarios.findIndex(user => user.email === usuario.email);
-            usuarios[userIndex] = updatedUser; 
-            localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
+            usuarios[userIndex] = updatedUser;
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
         }
     };
 
@@ -94,14 +97,14 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
             setModalOpen(true);
             return;
         }
-        
+
         clearPedidos();
         if (usuario) {
             const updatedUser = { ...usuario, pedidos: [] };
             const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
             const userIndex = usuarios.findIndex(user => user.email === usuario.email);
-            usuarios[userIndex] = updatedUser; 
-            localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
+            usuarios[userIndex] = updatedUser;
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
             setPedidos([]);
         }
         setModalTitle('Sucesso');
@@ -157,23 +160,40 @@ const Usuario = ({ theme, removePedido, clearPedidos, handleLogout }) => {
                         {pedidos.length > 0 ? (
                             pedidos.map((pedido, index) => (
                                 <div key={index} className='pedido-card'>
+
+                                    <div className="pedido-imagem">
+                                        <img src={img_pedido} className='pedido-icon' />
+                                    </div>
+
+
+
+                                    <div className='pedido-nome'> 
                                     <p>{pedido.quantidade} {pedido.nome}(s)</p>
-                                    <button onClick={() => handleRemovePedido(index)}>❌</button>
+                                    </div>
+
+                                   <div className='pedido-gap'>  
+
+                                   </div>
+
+                                    <div className='pedido-btn'> 
+                                    <button onClick={() => handleRemovePedido(index)}><img src={lixo} className='lixo-icon' /></button>
+                                    </div>
+
                                 </div>
                             ))
                         ) : (
-                            <p>{erro ? erro : 'Nenhum pedido encontrado.'}</p>
+                            <p className='zero-pedidos'>{erro ? erro : 'Adicione ítens ao seu pedido.'}</p>
                         )}
                     </div>
                     <button onClick={finalizarPedido} className='button-edituser-css-dois'>FINALIZAR PEDIDO</button>
                 </div>
             </div>
 
-            <Modal 
-                isOpen={modalOpen} 
-                onClose={() => setModalOpen(false)} 
-                title={modalTitle} 
-                message={modalMessage} 
+            <Modal
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                title={modalTitle}
+                message={modalMessage}
             />
         </div>
     );
