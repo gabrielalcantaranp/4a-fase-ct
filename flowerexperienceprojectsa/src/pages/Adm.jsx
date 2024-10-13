@@ -5,14 +5,55 @@ import search_icon_light from '../assets/search_w.png'
 import search_icon_dark from '../assets/search_b.png'
 
 const Adm = ({ theme, setTheme }) => {
+
     const [isRegistering, setIsRegistering] = useState(false);
 
     const handleRegisterClick = () => {
-        setIsRegistering(false); 
+        setIsRegistering(false);
     };
 
     const handleEditClick = () => {
-        setIsRegistering(true); 
+        setIsRegistering(true);
+    };
+
+
+    const [nome, setNome] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [tamanho, setTamanho] = useState('');
+    const [imagem, setImagem] = useState(null);
+
+    const handleCadastrar = () => {
+        if (!nome || !categoria) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        const novoProduto = {
+            nome,
+            categoria,
+            descricao,
+            tamanho,
+            imagem: imagem ? URL.createObjectURL(imagem) : prod_foto,
+        };
+
+        const produtosExistentes = JSON.parse(localStorage.getItem('produtos')) || {};
+
+        if (!produtosExistentes[categoria]) {
+            produtosExistentes[categoria] = [];
+        }
+
+        produtosExistentes[categoria].push(novoProduto);
+
+
+        localStorage.setItem('produtos', JSON.stringify(produtosExistentes));
+
+        setNome('');
+        setCategoria('');
+        setDescricao('');
+        setTamanho('');
+        setImagem(null);
+        alert('Produto cadastrado com sucesso!');
     };
 
     return (
@@ -28,56 +69,99 @@ const Adm = ({ theme, setTheme }) => {
                 <div className='principal-dois'>
 
                     <div className={`container-mid ${isRegistering ? 'registering' : ''}`}>
-
                         <div className='left-container'>
-                            <div className='search-box-prod'>
-                                <input type="text-prod" placeholder='Procurar' />
-                                
-                                <img src={theme == 'dark' ? search_icon_dark : search_icon_light} alt='' />
-                                
-                            </div>
-                        <p>NOME</p>
-                            <input type='text' className='input-adm-css' placeholder='Digite o nome do Produto.' />
                             <p>CATEGORIA</p>
-                            <input type='text' className='input-adm-css' placeholder='Digite a categoria do Produto.' />
+                            <select
+                                className='input-adm-css'
+                                value={categoria}
+                                onChange={(e) => setCategoria(e.target.value)}
+                            >
+                                <option value='' disabled>Selecione a categoria do Produto</option>
+                                <option value='Arranjos'>Arranjos</option>
+                                <option value='Desidratadas'>Desidratadas</option>
+                                <option value='Orquideas'>Orquídeas</option>
+                                <option value='Plantas'>Plantas</option>
+                            </select>
+
+                            
+                            <p>NOME</p>
+                            <input
+                                type='text'
+                                className='input-adm-css'
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                                placeholder='Digite o nome do Produto.'
+                            />
+
+
                             <p>DESCRIÇÃO</p>
-                            <input type='text' className='input-adm-css' placeholder='Digite a descrição do Produto.' />
+                            <input
+                                type='text'
+                                className='input-adm-css'
+                                value={descricao}
+                                onChange={(e) => setDescricao(e.target.value)}
+                                placeholder='Digite a descrição do Produto.'
+                            />
+
                             <p>TAMANHO</p>
-                            <input type='text' className='input-adm-css' placeholder='Digite o tamanho do Produto.' />
-                            <div className='btn'>
-                            <button className='btn-css'>EDITAR</button>
-                            <button className='btn-css-excluir'>EXCLUIR</button>
-                            </div>
+                            <input
+                                type='text'
+                                className='input-adm-css'
+                                value={tamanho}
+                                onChange={(e) => setTamanho(e.target.value)}
+                                placeholder='Digite o tamanho do Produto.'
+                            />
+
+                            <p>FOTO</p>
+                            <input
+                                type='file'
+                                className='input-adm-css'
+                                onChange={(e) => setImagem(e.target.files[0])}
+                            />
+
+                            <button className='button-prod-css-adm' onClick={handleCadastrar}>CADASTRAR</button>
                             <img src={prod_foto} className='prod-foto-css' />
                         </div>
-
                         <div className='right-container'>
-                            <p>NOME</p>
-                            <input type='text' className='input-adm-css' placeholder='Digite o nome do Produto.' />
-                            <p>CATEGORIA</p>
-                            <input type='text' className='input-adm-css' placeholder='Digite a categoria do Produto.' />
-                            <p>DESCRIÇÃO</p>
+
+                        <div className='search-box-prod'>
+                                <input type="text-prod" placeholder='Procurar' />
+
+                            <img src={theme == 'dark' ? search_icon_dark : search_icon_light} alt='' />
+
+                          </div>
+
+
+
+                          <p>NOME</p>
+                           <input type='text' className='input-adm-css' placeholder='Digite o nome do Produto.' />
+                           <p>CATEGORIA</p>
+                         <input type='text' className='input-adm-css' placeholder='Digite a categoria do Produto.' />
+                          <p>DESCRIÇÃO</p>
                             <input type='text' className='input-adm-css' placeholder='Digite a descrição do Produto.' />
                             <p>TAMANHO</p>
-                            <input type='text' className='input-adm-css' placeholder='Digite o tamanho do Produto.' />
-                            <button className='button-prod-css-adm'>CADASTRAR</button>
+                           <input type='text' className='input-adm-css' placeholder='Digite o tamanho do Produto.' />
+                           <div className='btn'>
+                               <button className='btn-css'>EDITAR</button>
+                               <button className='btn-css-excluir'>EXCLUIR</button>
+                           </div>
 
-                                        
                         </div>
                     </div>
 
                     <div className='container-button'>
                         <div className='button-div-um'>
-                            <button className='button-prod-css' onClick={handleEditClick}>EDITAR PRODUTO</button>
+                            <button className='button-prod-css' onClick={handleEditClick}>CADASTRAR PRODUTO</button>
                         </div>
                         <div className='button-div-dois'>
-                            <button className='button-prod-css' onClick={handleRegisterClick}>CADASTRAR PRODUTO</button>
+                            <button className='button-prod-css' onClick={handleRegisterClick}>EDITAR PRODUTO</button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Adm;
