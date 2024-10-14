@@ -13,11 +13,11 @@ const Desidratadas = () => {
     useEffect(() => {
 
         const produtosPadrao = [
-            { nome: 'DESIDRATADA UM', imagem: des_um },
-            { nome: 'DESIDRATADA DOIS', imagem: des_dois },
-            { nome: 'DESIDRATADA TRÊS', imagem: des_tres },
-            { nome: 'DESIDRATADA QUATRO', imagem: des_qua },
-            { nome: 'DESIDRATADA CINCO', imagem: des_cin },
+            { nome: 'SEMPRE VIVA INGLESES', imagem: des_um },
+            { nome: 'SEMPRE VIVA MOÇAMBIQUE', imagem: des_dois },
+            { nome: 'SEMPRE VIVA SANTINHO', imagem: des_tres },
+            { nome: 'SEMPRE VIVA BRAVA', imagem: des_qua },
+            { nome: 'SEMPRE VIVA SANTA CRUZ', imagem: des_cin },
         ];
 
 

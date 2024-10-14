@@ -9,19 +9,14 @@
     align-items: center;
     transition: 0.5s;
     background-image: url('../assets/background-dark.png');
-    background-size: 1250px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    background-size: cover;
 
 }
 
 .dark .div-user {
     background-color: var(--cor-1);
-    height: 87.9vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url('../assets/background-light.png');
-    background-size: 1250px;
+
 
 }
 
@@ -142,13 +137,13 @@
 .input-usuario {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px; /* Espaço entre os grupos de inputs */
+    margin-bottom: 20px; 
     margin-left: 5%;
 
 }   
 
 .input-usuario p {
-    margin: 5px 0; /* Margem acima e abaixo dos parágrafos */
+    margin: 5px 0; 
     font-size: 15px;
     font-weight: bold;
     color: var(--cor-2);
@@ -158,7 +153,7 @@
 }
 
 .dark .input-usuario p {
-    margin: 5px 0; /* Margem acima e abaixo dos parágrafos */
+    margin: 5px 0; 
     font-size: 15px;
     font-weight: bold;
     color: var(--cor-1);
@@ -167,8 +162,7 @@
 }
 
 .input-css {
-    /* padding: 8px; Espaçamento interno dos inputs */
-    margin-top: 10px; /* Espaço entre o parágrafo e o input */
+    margin-top: 10px;
     width: 100%;
     height: 35px;
     box-sizing: border-box;
@@ -414,46 +408,44 @@
 
 .senha-toggle {
     position: absolute;
-    right: 10px; /* Ajuste conforme necessário */
+    right: 10px; 
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    color: var(--cor-1); /* Ou a cor que você preferir */
+    color: var(--cor-1); 
 }
 
 
-/* Usuario.css */
 
-/* Estilo do card de pedido */
 .pedido-card {
     display: flex;
 
-    align-items: center; /* Centraliza verticalmente */
-    background-color: #f9f9f9; /* Cor de fundo leve */
-    border: 1px solid #ddd; /* Borda sutil */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px 15px; /* Espaçamento interno */
-    margin: 10px 0; /* Margem entre os cards */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    transition: transform 0.2s; /* Animação ao passar o mouse */
+    align-items: center; 
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 10px 15px; 
+    margin: 10px 0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; 
 }
 
 .pedido-card:hover {
-    transform: scale(1.02); /* Efeito de aumento ao passar o mouse */
+    transform: scale(1.02); 
 }
 
-/* Estilo do botão de exclusão */
+
 .pedido-card button {
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Sem borda */
-    color: #e74c3c; /* Cor vermelha para indicar exclusão */
-    font-size: 20px; /* Tamanho do texto */
-    cursor: pointer; /* Cursor em forma de mão */
-    transition: color 0.2s; /* Transição para mudança de cor */
+    background-color: transparent; 
+    border: none; 
+    color: #e74c3c; 
+    font-size: 20px; 
+    cursor: pointer; 
+    transition: color 0.2s; 
 }
 
 .pedido-card button:hover {
-    color: #c0392b; /* Cor mais escura ao passar o mouse */
+    color: #c0392b; 
 }
 
 .lixo-icon{

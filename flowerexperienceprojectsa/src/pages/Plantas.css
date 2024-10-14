@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .plantas {
     background-color: var(--cor-2);
@@ -7,17 +8,14 @@
     justify-content: center;
     transition: 0.5s;
     background-image: url('../assets/background-dark.png');
-    background-size: 1250px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    background-size: cover; 
+    
 
 }
+
 .dark .plantas {
     background-color: var(--cor-1);
-    height: 87.9vh;
-    display: flex;
-    justify-content: center;
     background-image: url('../assets/background-light.png');
-    background-size: 1250px;
 }
 
 .container {
@@ -25,27 +23,30 @@
     height: 80%;
     width: 80%;
     display: flex;
-    flex-direction: column; /* Flex para empilhar título e produtos */
+    flex-direction: column;
+    
 }
 
 .title {
     background-color: transparent;
     height: 10vh;
     text-align: center;
-    margin-bottom: 20px; /* Reduzi o espaço abaixo do título */
+    margin-bottom: 20px;
+    
 }
 
 .div-cards {
-    height: 60vh; /* Altura fixa para permitir rolagem */
-    overflow-y: auto; /* Permite a rolagem vertical */
+    height: 60vh;
+    
+    overflow-y: auto;
+   
 }
 
 .cards {
     display: flex;
-    /* align-items: center; */
-    flex-wrap: wrap; /* Permite que os cards se movam para a linha seguinte */
-    justify-content: center; /* Centraliza os cards no contêiner */
-    margin: 0; /* Remove margens para evitar desconfiguração */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
     background-color: white;
     height: 200%;
 }
@@ -60,7 +61,8 @@
     flex-direction: column;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    background-color: white; /* Mantém a cor de fundo dos cards */
+    background-color: white;
+
 }
 
 .card-image {
@@ -113,11 +115,13 @@
 
 .nome-planta {
     color: var(--cor-1);
-    font-size: 15px;
-    font-family: "Fredoka", sans-serif;
-    font-weight: 600;
-    transition: 0.5s;
-    text-decoration: none;
+    font-size: 20px;
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
 }
 
 .button-css {

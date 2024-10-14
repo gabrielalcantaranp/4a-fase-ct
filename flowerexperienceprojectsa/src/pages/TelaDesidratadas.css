@@ -8,19 +8,14 @@
     align-items: center;
     transition: 0.5s;
     background-image: url('../assets/background-dark.png');
-    background-size: 1250px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    background-size: cover;
     flex-direction: column;
 
 }
 .dark .tela-desidratadas {
     background-color: var(--cor-1);
-    height: 87.9vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url('../assets/background-light.png');
-    background-size: 1250px;
+
 }
 
 .ta-principal-desidratadas{
