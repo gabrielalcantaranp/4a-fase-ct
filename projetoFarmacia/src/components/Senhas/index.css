@@ -1,0 +1,81 @@
+.container-principal {
+    width: 50%;
+    height: 50%;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    overflow: hidden; /* Impede o overflow geral */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.area-botoes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.botao {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao.normal {
+    background-color: #28a745;
+    color: white;
+}
+
+.botao.preferencial {
+    background-color: #ffc107;
+    color: white;
+}
+
+.botao.chamar {
+    background-color: #007bff;
+    color: white;
+}
+
+.botao:hover {
+    opacity: 0.8;
+}
+
+.area-fila {
+    margin-top: 20px;
+    height: 200px; /* Altura fixa para a área da fila */
+    overflow-y: auto; /* Permite rolagem vertical */
+    border: 1px solid #ddd; /* Adiciona uma borda para destaque */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.tabela-senhas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.mensagem-display {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}

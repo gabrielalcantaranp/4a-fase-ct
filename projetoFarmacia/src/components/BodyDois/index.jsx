@@ -1,14 +1,14 @@
-import React from 'react'
-import './index.css'
-
+import React, { useState } from 'react';
+import './index.css';
+import Senhas from '../Senhas'
 
 function Body() {
+    
     return (
-        <div className='bodyDois-container'>
-            {/* <img src='./images/bodydois.png' className='bodydoisfoto-css'/> */}
+        <div className='container-principal-um'>
+            <Senhas/>
         </div>
-    )
-
+    );
 }
 
-export default Body 
+export default Body;
